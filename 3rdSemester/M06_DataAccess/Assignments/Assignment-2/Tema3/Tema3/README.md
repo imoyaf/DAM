@@ -65,6 +65,11 @@ Todas las tablas tendrán sus correspondientes identificadores en forma de clave
 ## Instalación y Configuración
 
 1. **Clonar el repositorio**:
-   `git clone <URL_DEL_REPOSITORIO>`
-2. **Configurar la base de datos**: Asegúrate de tener MySQL instalado y ejecutándose. Crea una base de datos con el nombre de tu elección.
-   
+   `git clone https://github.com/imoyaf/DAM/tree/main/3rdSemester/M06_DataAccess/Assignments/Assignment-2/Tema3`
+2. **Configurar la base de datos**: Asegúrate de tener MySQL instalado y ejecutándose. Crea una base de datos con el nombre de tu elección
+3. **Configuración de Hibernate**: Asegúrate de que el archivo hibernate.cfg.xml contiene los parámetros correctos para conectar con tu base de datos MySQL
+4. **Compilación del proyecto**:<br>
+   `mvn clean install`
+5. **Ejecutar el proyecto**: Puedes ejecutar la aplicación desde tu IDE o desde la línea de comandos usando Maven<br>
+   `mvn exec:java`
+6. 
