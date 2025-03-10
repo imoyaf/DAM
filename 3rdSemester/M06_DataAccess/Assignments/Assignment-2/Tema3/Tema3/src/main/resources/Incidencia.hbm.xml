@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Incidencia" table="incidencias" catalog="empleados_AAD">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="fechaHora" type="timestamp">
+            <column name="fecha_hora"/>
+        </property>
+        <property name="detalle" type="text">
+            <column name="detalle" not-null="true"/>
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="1" not-null="true"/>
+        </property>
+        <many-to-one name="empleadoOrigen" class="model.Empleado">
+            <column name="empleado_origen_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="empleadoDestino" class="model.Empleado">
+            <column name="empleado_destino_id" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

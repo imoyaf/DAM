@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Empleado" table="empleados" catalog="empleados_AAD">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" length="50" not-null="true"/>
+        </property>
+        <property name="contrasena" type="string">
+            <column name="contrasena" length="255" not-null="true"/>
+        </property>
+        <property name="nombreCompleto" type="string">
+            <column name="nombre_completo" length="255" not-null="true"/>
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="20"/>
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correo_electronico" length="100" not-null="true"/>
+        </property>
+        <property name="puesto" type="string">
+            <column name="puesto" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>
