@@ -65,10 +65,6 @@ public class Empleado {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getUsuario() {
         return usuario;
     }
@@ -115,6 +111,18 @@ public class Empleado {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado: \n" +
+                "id: " + id +
+                "\nusuario: " + usuario +
+                "\ncontrasena: " + contrasena +
+                "\nnombreCompleto: " + nombreCompleto +
+                "\ntelefono: " + telefono +
+                "\ncorreoElectronico: " + correoElectronico +
+                "\npuesto: " + puesto;
     }
 }
 
