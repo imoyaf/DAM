@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/commons-dbcp-all-1.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-all-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-bench.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-core-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-cs-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-cs.optional-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-db4ounit-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-instrumentation-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-nqopt-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-optional-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-osgi-test-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-taj-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-tools-java5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-osgi-java5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../../../Classes/Class-5/DAM-M06-Clase05/db4o-lib/Libreriasdb4o/db4o-8.0.276.16149-osgi-java5.jar!/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
