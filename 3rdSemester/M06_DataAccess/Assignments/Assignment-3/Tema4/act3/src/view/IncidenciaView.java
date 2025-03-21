@@ -4,7 +4,6 @@ import controller.EmpleadoController;
 import controller.IncidenciaController;
 import exception.BuscarEnArchivoException;
 import exception.GuardarEnArchivoException;
-import model.TipoIncidencia;
 import util.LeerDatos;
 import model.Empleado;
 import model.Incidencia;
@@ -104,7 +103,7 @@ public class IncidenciaView {
         System.out.print("Introduce el detalle de la incidencia: ");
         String detalle = scanner.nextLine();
         System.out.print("Introduce el tipo de incidencia (U para Urgente, N para Normal): ");
-        TipoIncidencia tipo = LeerDatos.leerTipoIncidencia();
+        String tipo = LeerDatos.leerTipoIncidencia();
         Empleado empleadoDestino = null;
         try {
             empleadoDestino = EmpleadoController.getInstance().buscarEmpleado(empleadoDestinoId);

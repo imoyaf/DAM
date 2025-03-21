@@ -1,7 +1,5 @@
 package util;
 
-import model.TipoIncidencia;
-
 import java.util.Scanner;
 
 public class LeerDatos {
@@ -25,16 +23,16 @@ public class LeerDatos {
         return valor;
     }
 
-    public static TipoIncidencia leerTipoIncidencia() {
-        TipoIncidencia tipoIncidencia = null;
+    public static String leerTipoIncidencia() {
+        String tipoIncidencia = null;
         boolean exit = false;
         do {
             String input = scanner.nextLine().toUpperCase();
             if(input.charAt(0) == 'N') {
-                tipoIncidencia = TipoIncidencia.NORMAL;
+                tipoIncidencia = "N";
                 exit = true;
             } else if(input.charAt(0) == 'U') {
-                tipoIncidencia = TipoIncidencia.URGENTE;
+                tipoIncidencia = "U";
                 exit = true;
             } else {
                 System.out.println("Introduce solo la letra N para Normal o la letra U para Urgente");
