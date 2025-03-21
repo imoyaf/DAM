@@ -3,6 +3,7 @@ package view;
 import controller.EmpleadoController;
 import controller.IncidenciaController;
 import exception.BuscarEnArchivoException;
+import exception.EliminarEnArchivoException;
 import exception.GuardarEnArchivoException;
 import util.LeerDatos;
 import model.Empleado;
@@ -24,7 +25,8 @@ public class IncidenciaView {
         3. Crear nueva incidencia
         4. Ver incidencias creadas por ti
         5. Ver incidencias destinadas a ti
-        6. Volver al menú principal
+        6. Eliminar incidencia
+        7. Volver al menú principal
         """;
         System.out.println(menuIncidencias);
     }
@@ -57,10 +59,13 @@ public class IncidenciaView {
                 case 5:
                     obtenerIncidenciasDestinadasAEmpleado(empleado);
                     break;
+                case 6:
+                    eliminarIncidencia();
+                    break;
                 default:
-                    System.out.println("Error, por favor introduce una opción válida.");
+                    System.out.println("Por favor introduce una opción válida.");
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
 
     private void obtenerIncidenciaPorId() {
@@ -158,6 +163,25 @@ public class IncidenciaView {
             }
         } else {
             System.out.println("No tienes incidencias destinadas.");
+        }
+    }
+
+    private void eliminarIncidencia() {
+        Incidencia incidencia = null;
+        System.out.print("Introduce el ID de la incidencia: ");
+        int id = LeerDatos.leerInt();
+        try{
+            incidencia = incidenciaController.obtenerIncidenciaPorId(id);
+            System.out.println("Incidencia con ID " + id + " eliminada.");
+        } catch(BuscarEnArchivoException e) {
+            System.out.println("No se ha podido obtener la incidencia. Motivo: " + e.getMessage());
+        }
+
+        try {
+            incidenciaController.eliminarIncidencia(incidencia);
+        }
+        catch(EliminarEnArchivoException e) {
+            System.out.println("No se ha podido eliminar la incidencia. Motivo: " + e.getMessage());
         }
     }
 }

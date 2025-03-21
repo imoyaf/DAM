@@ -121,7 +121,7 @@ public class EmpleadoView {
         try {
             Empleado empleadoExistente = empleadoController.buscarEmpleado(id);
             if (empleadoExistente == null) {
-                System.out.println("Error: No existe un empleado con el ID proporcionado.");
+                System.out.println(" No existe un empleado con el ID proporcionado.");
                 return;
             }
             System.out.print("Nuevo nombre completo: ");
@@ -150,7 +150,7 @@ public class EmpleadoView {
         try {
             Empleado empleadoExistente = empleadoController.buscarEmpleado(id);
             if (empleadoExistente == null) {
-                System.out.println("Error: No existe un empleado con el ID proporcionado.");
+                System.out.println("No existe un empleado con el ID proporcionado.");
                 return;
             }
             System.out.print("Nueva contraseña: ");
@@ -169,7 +169,7 @@ public class EmpleadoView {
         try {
             Empleado empleadoExistente = empleadoController.buscarEmpleado(id);
             if (empleadoExistente == null) {
-                System.out.println("Error: No existe un empleado con el ID proporcionado.");
+                System.out.println("No existe un empleado con el ID proporcionado.");
                 return;
             }
         } catch(BuscarEnArchivoException e) {

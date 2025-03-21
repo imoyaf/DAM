@@ -1,6 +1,7 @@
 package controller;
 
 import exception.BuscarEnArchivoException;
+import exception.EliminarEnArchivoException;
 import exception.GuardarEnArchivoException;
 import model.Empleado;
 import model.Incidencia;
@@ -94,5 +95,15 @@ public class IncidenciaController {
                     + e.getMessage(), e);
         }
         return incidencias;
+    }
+
+    public void eliminarIncidencia(Incidencia incidencia) throws EliminarEnArchivoException {
+        try {
+            db.delete(incidencia);
+        } catch(Exception e) {
+            logger.log(Level.SEVERE, "Error al eliminar la incidencia. ", e);
+            throw new EliminarEnArchivoException("Error al eliminar la incidencia"
+                    + e.getMessage(), e);
+        }
     }
 }

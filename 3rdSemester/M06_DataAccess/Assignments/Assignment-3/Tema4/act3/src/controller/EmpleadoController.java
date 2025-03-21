@@ -45,7 +45,11 @@ public class EmpleadoController {
         Empleado empleadoValidado;
         try {
             ObjectSet<Empleado> result = db.queryByExample(empleado);
-            empleadoValidado = result.next();
+            if(result.hasNext()){
+                empleadoValidado = result.next();
+            } else {
+                empleadoValidado = null;
+            }
         } catch(Exception e) {
             logger.log(Level.SEVERE, "Excepción al intentar validar el empleado. ", e);
             throw new BuscarEnArchivoException("Error al intentar validar el empleado. "
