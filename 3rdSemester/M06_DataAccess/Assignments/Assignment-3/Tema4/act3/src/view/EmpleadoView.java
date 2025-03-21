@@ -1,6 +1,7 @@
 package view;
 
 import controller.EmpleadoController;
+import exception.BuscarEnArchivoException;
 import exception.GuardarEnArchivoException;
 import model.Empleado;
 import util.LeerDatos;
@@ -165,16 +166,21 @@ public class EmpleadoView {
         System.out.println("\n--- Eliminar Empleado ---");
         System.out.print("Ingrese el ID del empleado a eliminar: ");
         int id = LeerDatos.leerInt();
-        try{
+        try {
             Empleado empleadoExistente = empleadoController.buscarEmpleado(id);
             if (empleadoExistente == null) {
                 System.out.println("Error: No existe un empleado con el ID proporcionado.");
                 return;
             }
+        } catch(BuscarEnArchivoException e) {
+            System.out.println("Error: No existe un empleado con el ID proporcionado.");
+        }
+
+        try {
             empleadoController.eliminarEmpleado(id);
             System.out.println("Empleado eliminado correctamente.");
         } catch(Exception e) {
-            System.out.println("Error: No se pudo encontrar el empleado y/o eliminarlo. Motivo: " + e.getMessage());
+            System.out.println("Error: No se pudo eliminar al empleado. Motivo: " + e.getMessage());
         }
     }
 

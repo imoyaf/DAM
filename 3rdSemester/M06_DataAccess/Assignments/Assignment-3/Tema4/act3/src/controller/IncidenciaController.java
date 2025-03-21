@@ -68,7 +68,7 @@ public class IncidenciaController {
         try {
             ObjectSet<Incidencia> result = db.queryByExample(incidencia);
             while (result.hasNext()) {
-                incidencias.add((Incidencia) result);
+                incidencias.add(result.next());
             }
         } catch(Exception e) {
             logger.log(Level.SEVERE, "Error al buscar las incidencias. ", e);
@@ -86,7 +86,7 @@ public class IncidenciaController {
         try {
             ObjectSet<Incidencia> result = db.queryByExample(incidencia);
             while (result.hasNext()) {
-                incidencias.add((Incidencia) result);
+                incidencias.add(result.next());
             }
         } catch(Exception e) {
             logger.log(Level.SEVERE, "Error al buscar las incidencias. ", e);

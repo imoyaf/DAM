@@ -45,7 +45,7 @@ public class EmpleadoController {
         Empleado empleadoValidado;
         try {
             ObjectSet<Empleado> result = db.queryByExample(empleado);
-            empleadoValidado = (Empleado) result.next();
+            empleadoValidado = result.next();
         } catch(Exception e) {
             logger.log(Level.SEVERE, "Excepción al intentar validar el empleado. ", e);
             throw new BuscarEnArchivoException("Error al intentar validar el empleado. "
@@ -69,6 +69,10 @@ public class EmpleadoController {
         }
 
         try {
+            empleadoModificar.setNombreCompleto(empleado.getNombreCompleto());
+            empleadoModificar.setCorreoElectronico(empleado.getCorreoElectronico());
+            empleadoModificar.setTelefono(empleado.getTelefono());
+            empleadoModificar.setPuesto(empleado.getPuesto());
             db.store(empleadoModificar);
         } catch(Exception e) {
             logger.log(Level.SEVERE,"Excepción al intentar modificar el empleado con ID: "
@@ -83,7 +87,11 @@ public class EmpleadoController {
         Empleado empleadoEncontrado;
         try {
             ObjectSet<Empleado> result = db.queryByExample(new Empleado(id));
-            empleadoEncontrado = result.next();
+            if(result.hasNext()){
+                empleadoEncontrado = result.next();
+            } else {
+                empleadoEncontrado =  null;
+            }
         } catch(Exception e) {
             logger.log(Level.SEVERE,"Excepción al intentar modificar el empleado con ID: " + id, e);
             throw new BuscarEnArchivoException("Error al buscar el empleado. " + e.getMessage(), e);
@@ -115,11 +123,19 @@ public class EmpleadoController {
         }
     }
 
-    public void eliminarEmpleado(int id) throws EliminarEnArchivoException {
+    public void eliminarEmpleado(int id) throws BuscarEnArchivoException, EliminarEnArchivoException {
         Empleado empleadoEliminar;
-        ObjectSet<Empleado> result = db.queryByExample(new Empleado(id));
-        empleadoEliminar = result.next();
-        try{
+        try {
+            ObjectSet<Empleado> result = db.queryByExample(new Empleado(id));
+            empleadoEliminar = result.next();
+        } catch(Exception e) {
+            logger.log(Level.SEVERE, "Excepción al intentar buscar el usuario con ID: "
+                    + id, e);
+            throw new BuscarEnArchivoException("Error al intentar buscar el usuario con ID: "
+                    + id + e.getMessage(), e);
+        }
+
+        try {
             db.delete(empleadoEliminar);
         } catch(Exception e) {
             logger.log(Level.SEVERE, "Excepción al intentar eliminar el usuario con ID: "

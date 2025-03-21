@@ -117,10 +117,11 @@ public class IncidenciaView {
             incidencia.setEmpleadoDestino(empleadoDestino);
             incidencia.setDetalle(detalle);
             incidencia.setTipo(tipo);
-            incidencia.setFechaHora(new java.sql.Timestamp(System.currentTimeMillis()));
+            incidencia.setFechaHora(new java.util.Date());
 
             try {
                 incidenciaController.insertarIncidencia(incidencia);
+                System.out.println("Incidencia creada con éxito");
             } catch(GuardarEnArchivoException e) {
                 System.out.println("No se ha podido obtener el empleado destino. Motivo: " + e.getMessage());
             }

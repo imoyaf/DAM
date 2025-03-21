@@ -42,3 +42,131 @@ java.lang.reflect.InaccessibleObjectException: Unable to make field private fina
 	at view.EmpleadoView.ejecutar(EmpleadoView.java:46)
 	at Main.main(Main.java:7)
 
+Mar 21, 2025 3:47:42 P.M. controller.IncidenciaController obtenerTodasLasIncidencias
+SEVERE: Error al intentar obtener la lista de incidencias
+java.lang.reflect.InaccessibleObjectException: Unable to make field private int java.sql.Timestamp.nanos accessible: module java.sql does not "opens java.sql" to unnamed module @6069db50
+	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:391)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:367)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:315)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:183)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:177)
+	at com.db4o.internal.JDK_1_2.setAccessible(JDK_1_2.java:122)
+	at com.db4o.internal.Platform4.setAccessible(Platform4.java:526)
+	at com.db4o.reflect.jdk.JdkField.setAccessible(JdkField.java:48)
+	at com.db4o.reflect.jdk.JdkField.<init>(JdkField.java:24)
+	at com.db4o.reflect.jdk.JdkClass.createField(JdkClass.java:71)
+	at com.db4o.reflect.jdk.JdkClass.getDeclaredFields(JdkClass.java:79)
+	at com.db4o.reflect.generic.GenericClass.getDeclaredFields(GenericClass.java:106)
+	at com.db4o.internal.ClassMetadata.reflectFields(ClassMetadata.java:1824)
+	at com.db4o.internal.ClassMetadata.collectReflectFields(ClassMetadata.java:394)
+	at com.db4o.internal.ClassMetadata.initializeAspects(ClassMetadata.java:240)
+	at com.db4o.internal.PendingClassInits.initializeAspects(PendingClassInits.java:56)
+	at com.db4o.internal.PendingClassInits.checkStatics(PendingClassInits.java:62)
+	at com.db4o.internal.PendingClassInits.checkWrites(PendingClassInits.java:72)
+	at com.db4o.internal.PendingClassInits.checkInits(PendingClassInits.java:83)
+	at com.db4o.internal.PendingClassInits.process(PendingClassInits.java:45)
+	at com.db4o.internal.ClassMetadataRepository.produceClassMetadata(ClassMetadataRepository.java:233)
+	at com.db4o.internal.ObjectContainerBase.produceClassMetadata(ObjectContainerBase.java:1019)
+	at com.db4o.internal.ObjectContainerBase.classMetadataForObject(ObjectContainerBase.java:279)
+	at com.db4o.internal.activation.ActivationContext4.classMetadata(ActivationContext4.java:77)
+	at com.db4o.internal.FieldMetadata.cascadeActivation(FieldMetadata.java:292)
+	at com.db4o.internal.ClassMetadata$2.processAspect(ClassMetadata.java:169)
+	at com.db4o.internal.metadata.StandardAspectTraversalStrategy.traverseAllAspects(StandardAspectTraversalStrategy.java:24)
+	at com.db4o.internal.ClassMetadata.traverseAllAspects(ClassMetadata.java:2080)
+	at com.db4o.internal.ClassMetadata.cascadeActivation(ClassMetadata.java:162)
+	at com.db4o.internal.ObjectReference.activateInternal(ObjectReference.java:127)
+	at com.db4o.internal.ObjectContainerBase.processedByImmediateActivation(ObjectContainerBase.java:1850)
+	at com.db4o.internal.ObjectContainerBase.stillToActivate(ObjectContainerBase.java:1826)
+	at com.db4o.internal.ObjectContainerBase$2.apply(ObjectContainerBase.java:193)
+	at com.db4o.internal.ObjectContainerBase$2.apply(ObjectContainerBase.java:191)
+	at com.db4o.internal.ObjectContainerBase.asTopLevelCall(ObjectContainerBase.java:427)
+	at com.db4o.internal.ObjectContainerBase.activate(ObjectContainerBase.java:191)
+	at com.db4o.internal.ObjectContainerBase.activate(ObjectContainerBase.java:176)
+	at com.db4o.internal.ObjectContainerBase.getActivatedObjectFromCache(ObjectContainerBase.java:890)
+	at com.db4o.internal.query.result.AbstractQueryResult.activatedObject(AbstractQueryResult.java:30)
+	at com.db4o.internal.query.result.AbstractQueryResult$1.map(AbstractQueryResult.java:62)
+	at com.db4o.foundation.MappingIterator.moveNext(MappingIterator.java:30)
+	at com.db4o.foundation.Iterable4Adaptor.moveNext(Iterable4Adaptor.java:46)
+	at com.db4o.foundation.Iterable4Adaptor.hasNext(Iterable4Adaptor.java:28)
+	at com.db4o.internal.query.result.StatefulQueryResult.hasNext(StatefulQueryResult.java:42)
+	at com.db4o.internal.query.ObjectSetFacade.hasNext(ObjectSetFacade.java:60)
+	at controller.IncidenciaController.obtenerTodasLasIncidencias(IncidenciaController.java:42)
+	at view.IncidenciaView.mostrarTodasLasIncidencias(IncidenciaView.java:83)
+	at view.IncidenciaView.ejecutar(IncidenciaView.java:49)
+	at view.EmpleadoView.validarEmpleado(EmpleadoView.java:107)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:46)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 3:55:53 P.M. controller.IncidenciaController obtenerIncidenciasPorEmpleadoOrigen
+SEVERE: Error al buscar las incidencias. 
+java.lang.ClassCastException: class com.db4o.internal.query.ObjectSetFacade cannot be cast to class model.Incidencia (com.db4o.internal.query.ObjectSetFacade and model.Incidencia are in unnamed module of loader 'app')
+	at controller.IncidenciaController.obtenerIncidenciasPorEmpleadoOrigen(IncidenciaController.java:71)
+	at view.IncidenciaView.obtenerIncidenciasCreadasPorEmpleado(IncidenciaView.java:135)
+	at view.IncidenciaView.ejecutar(IncidenciaView.java:55)
+	at view.EmpleadoView.validarEmpleado(EmpleadoView.java:107)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:46)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 3:56:58 P.M. controller.IncidenciaController obtenerIncidenciasPorEmpleadoDestino
+SEVERE: Error al buscar las incidencias. 
+java.lang.ClassCastException: class com.db4o.internal.query.ObjectSetFacade cannot be cast to class model.Incidencia (com.db4o.internal.query.ObjectSetFacade and model.Incidencia are in unnamed module of loader 'app')
+	at controller.IncidenciaController.obtenerIncidenciasPorEmpleadoDestino(IncidenciaController.java:89)
+	at view.IncidenciaView.obtenerIncidenciasDestinadasAEmpleado(IncidenciaView.java:151)
+	at view.IncidenciaView.ejecutar(IncidenciaView.java:58)
+	at view.EmpleadoView.validarEmpleado(EmpleadoView.java:107)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:46)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 4:06:28 P.M. controller.EmpleadoController buscarEmpleado
+SEVERE: Excepción al intentar modificar el empleado con ID: 8
+java.lang.IllegalStateException
+	at com.db4o.foundation.Iterable4Adaptor.next(Iterable4Adaptor.java:35)
+	at com.db4o.internal.query.result.StatefulQueryResult.next(StatefulQueryResult.java:48)
+	at com.db4o.internal.query.ObjectSetFacade.next(ObjectSetFacade.java:64)
+	at controller.EmpleadoController.buscarEmpleado(EmpleadoController.java:90)
+	at view.EmpleadoView.eliminarEmpleado(EmpleadoView.java:169)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:55)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 4:09:49 P.M. controller.EmpleadoController buscarEmpleado
+SEVERE: Excepción al intentar modificar el empleado con ID: 8
+java.lang.IllegalStateException
+	at com.db4o.foundation.Iterable4Adaptor.next(Iterable4Adaptor.java:35)
+	at com.db4o.internal.query.result.StatefulQueryResult.next(StatefulQueryResult.java:48)
+	at com.db4o.internal.query.ObjectSetFacade.next(ObjectSetFacade.java:64)
+	at controller.EmpleadoController.buscarEmpleado(EmpleadoController.java:90)
+	at view.EmpleadoView.eliminarEmpleado(EmpleadoView.java:169)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:55)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 4:11:06 P.M. java.lang.Shutdown logRuntimeExit
+FINE: Runtime.exit() called with status: 130
+java.lang.Throwable: Runtime.exit(130)
+	at java.base/java.lang.Shutdown.logRuntimeExit(Shutdown.java:179)
+	at java.base/java.lang.Shutdown.exit(Shutdown.java:160)
+	at java.base/java.lang.Terminator$1.handle(Terminator.java:51)
+	at java.base/jdk.internal.misc.Signal$1.run(Signal.java:218)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+Mar 21, 2025 4:14:57 P.M. controller.EmpleadoController buscarEmpleado
+SEVERE: Excepción al intentar modificar el empleado con ID: 8
+java.lang.IllegalStateException
+	at com.db4o.foundation.Iterable4Adaptor.next(Iterable4Adaptor.java:35)
+	at com.db4o.internal.query.result.StatefulQueryResult.next(StatefulQueryResult.java:48)
+	at com.db4o.internal.query.ObjectSetFacade.next(ObjectSetFacade.java:64)
+	at controller.EmpleadoController.buscarEmpleado(EmpleadoController.java:90)
+	at view.EmpleadoView.eliminarEmpleado(EmpleadoView.java:170)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:56)
+	at Main.main(Main.java:7)
+
+Mar 21, 2025 4:14:57 P.M. controller.EmpleadoController eliminarEmpleado
+SEVERE: Excepción al intentar buscar el usuario con ID: 8
+java.lang.IllegalStateException
+	at com.db4o.foundation.Iterable4Adaptor.next(Iterable4Adaptor.java:35)
+	at com.db4o.internal.query.result.StatefulQueryResult.next(StatefulQueryResult.java:48)
+	at com.db4o.internal.query.ObjectSetFacade.next(ObjectSetFacade.java:64)
+	at controller.EmpleadoController.eliminarEmpleado(EmpleadoController.java:130)
+	at view.EmpleadoView.eliminarEmpleado(EmpleadoView.java:179)
+	at view.EmpleadoView.ejecutar(EmpleadoView.java:56)
+	at Main.main(Main.java:7)
+
