@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+    <empleado id="1">
+        <usuario>joanpetit</usuario>
+        <contrasena>123456</contrasena>
+        <nombre_completo>Joan Petit</nombre_completo>
+        <telefono>666555444</telefono>
+        <correo_electronico>joan.petit@email.com</correo_electronico>
+        <puesto>Administrativo</puesto>
+    </empleado>
+    <empleado id="2">
+        <usuario>joanapetita</usuario>
+        <contrasena>123456</contrasena>
+        <nombre_completo>Joana Petita</nombre_completo>
+        <telefono>666333222</telefono>
+        <correo_electronico>joana.petita@email.com</correo_electronico>
+        <puesto>Programadora</puesto>
+    </empleado>
+</empleados>
+
