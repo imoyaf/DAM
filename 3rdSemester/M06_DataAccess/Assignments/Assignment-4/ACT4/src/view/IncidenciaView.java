@@ -136,6 +136,7 @@ public class IncidenciaView {
             }
         } catch (ExcepcionServicio e) {
             System.out.println("No se ha podido obtener la lista de incidencias. Motivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -151,6 +152,7 @@ public class IncidenciaView {
             }
         } catch (ExcepcionServicio e) {
             System.out.println("No se ha podido obtener las incidencias. Motivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -166,6 +168,7 @@ public class IncidenciaView {
             }
         } catch (ExcepcionServicio e) {
             System.out.println("No se ha podido obtener la lista de incidencias. Motivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -183,6 +186,7 @@ public class IncidenciaView {
             }
         } catch (ExcepcionServicio e) {
             System.out.println("No se ha podido eliminar la incidencia. Motivo: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

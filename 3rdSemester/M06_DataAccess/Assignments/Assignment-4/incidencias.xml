@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <incidencias>
     <incidencia id="1">
-        <fecha_hora>2025-04-20T10:30:00</fecha_hora>
-        <empleado_origen ref="1" />
-        <empleado_destino ref="2" />
+        <fechaHora>2025-04-20T10:30:00</fechaHora>
+        <empleadoOrigen ref="1" />
+        <empleadoDestino ref="2" />
         <detalle>Problema con el acceso al sistema</detalle>
         <tipo>N</tipo>
     </incidencia>
     <incidencia id="2">
-        <fecha_hora>2025-04-20T11:00:00</fecha_hora>
-        <empleado_origen ref="2" />
-        <empleado_destino ref="1" />
+        <fechaHora>2025-04-20T11:00:00</fechaHora>
+        <empleadoOrigen ref="2" />
+        <empleadoDestino ref="1" />
         <detalle>Fallo en la conexión a la red</detalle>
         <tipo>U</tipo>
     </incidencia>
