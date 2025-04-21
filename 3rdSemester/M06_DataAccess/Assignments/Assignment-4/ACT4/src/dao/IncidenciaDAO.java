@@ -162,40 +162,6 @@ public class IncidenciaDAO {
         return incidencia;
     }
 
-
-//    private Incidencia parsearIncidenciaDesdeXML(String contenido) throws Exception {
-//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//        DocumentBuilder builder = factory.newDocumentBuilder();
-//        Document doc = builder.parse(new InputSource(new StringReader(contenido)));
-//        Element root = doc.getDocumentElement();
-//
-//        Incidencia incidencia = new Incidencia();
-//        incidencia.setId(Integer.parseInt(root.getAttribute("id")));
-//
-//        String fechaStr = getText(root, "fechaHora");
-//        if (!fechaStr.isBlank()) {
-//            incidencia.setFechaHora(LocalDateTime.parse(fechaStr, FORMATO_FECHA));
-//        }
-//
-//        Element origenElem = (Element) root.getElementsByTagName("empleadoOrigen").item(0);
-//        if (origenElem != null && origenElem.hasAttribute("ref")) {
-//            int idOrigen = Integer.parseInt(origenElem.getAttribute("ref"));
-//            incidencia.setEmpleadoOrigen(new Empleado(idOrigen));
-//        }
-//
-//        Element destinoElem = (Element) root.getElementsByTagName("empleadoDestino").item(0);
-//        if (destinoElem != null && destinoElem.hasAttribute("ref")) {
-//            int idDestino = Integer.parseInt(destinoElem.getAttribute("ref"));
-//            incidencia.setEmpleadoDestino(new Empleado(idDestino));
-//        }
-//
-//        incidencia.setDetalle(getText(root, "detalle"));
-//        incidencia.setTipo(getText(root, "tipo"));
-//
-//        return incidencia;
-//    }
-
-
     private List<Incidencia> ejecutarConsultaIncidencias(String xquery) throws Exception {
         List<Incidencia> incidencias = new ArrayList<>();
         Collection collection = null;
